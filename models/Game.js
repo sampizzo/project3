@@ -12,11 +12,12 @@ var GameSchema = new Schema({
   language: {
     type: String,
     trim: true,
-    level: {
-      type: Number,
-      trim: true,
-    },
   },
+  level: {
+    type: Number,
+    trim: true,
+    default: 1
+  }
 });
 
 // This creates our model from the above schema, using mongoose's model method

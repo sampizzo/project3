@@ -44,13 +44,14 @@ var UserSchema = new Schema({
     default: Date.now
   },
 // Pull from the Game collection
-  language: [
+  games: 
     {
-      type: String
-      // type: Schema.Types.ObjectId,
-      // ref: "Game"
+      // type: String
+      type: Schema.Types.ObjectId,
+      ref: "Game"
     }
-  ] 
+
+  
 });
 
 

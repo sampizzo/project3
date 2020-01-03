@@ -1,27 +1,27 @@
 [
     {
       "id": 1,
-      "syntax": ""
+      "syntax": "b"
     },
     {
       "id": 2,
-      "syntax": ""
+      "syntax": "bb"
     },
     {
       "id": 3,
-      "syntax": ""
+      "syntax": "!DOCTYPE"
     },
     {
       "id": 4,
-      "syntax": ""
+      "syntax": "<div>"
     },
     {
       "id": 5,
-      "syntax": ""
+      "syntax": "class='"
     },
     {
       "id": 6,
-      "syntax": ""
+      "syntax": "</body>"
     },
     {
       "id": 7,
@@ -29,22 +29,22 @@
     },
     {
       "id": 8,
-      "syntax": ""
+      "syntax": "h"
     },
     {
       "id": 9,
-      "syntax": ""
+      "syntax": "i"
     },
     {
       "id": 10,
-      "syntax": ""
+      "syntax": "j"
     },
     {
       "id": 11,
-      "syntax": ""
+      "syntax": "k"
     },
     {
       "id": 12,
-      "syntax": ""
+      "syntax": "l"
     }
   ]

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
-import syntaxComponent from "../Syntax";
+import syntaxComponent from "../syntax";
 import htmlJson from "../../utils/html.json"
 import useKeyPress from '../../hooks/useKeyPress';
 
@@ -22,10 +22,11 @@ const check = []
     console.log(key, current.syntax)
     
     if (key === current.syntax) {
-      check.push(key)
+      current.syntax = ""
+      current.syntax = newIndex
       let newIndex = index + 1
-      setIndex(newIndex)
-      setCurrent(htmlJson[index])
+      setIndex(newIndex);
+      setCurrent(htmlJson[index]);
       resetAnimation();
     }
 });
@@ -33,7 +34,7 @@ console.log("check: " + check.length)
 
   return (
     <div className="gameDiv container">
-        <div className={myClass}>
+        <div className="word">
         {/* {this.state.html.map(html=> ( */}
           <syntaxComponent>{current.syntax}</syntaxComponent>
           {/* ))} */}

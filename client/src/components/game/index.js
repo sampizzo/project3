@@ -5,27 +5,31 @@ import htmlJson from "../../utils/html.json"
 import useKeyPress from '../../hooks/useKeyPress';
 
 
-
 function Game() {
   const[html, setHtml] = useState(htmlJson)
   const[index, setIndex] = useState(0)
   const[current, setCurrent] = useState(html[0])
-  // const[myClass, setMyClass] = useState("word")
-// function resetAnimation(){
-//   setMyClass("")
-//   setMyClass("word")
-// }
+  const[myClass, setMyClass] = useState("word")
+
+function resetAnimation(){
+  setMyClass("")
+  setMyClass("word")
+}
+const check = []
+
   useKeyPress(key => {
-    
+
     console.log(key, current.syntax)
     
     if (key === current.syntax) {
+      check.push(key)
       let newIndex = index + 1
       setIndex(newIndex)
       setCurrent(htmlJson[index])
-      // resetAnimation();
+      resetAnimation();
     }
 });
+console.log("check: " + check.length)
 
   return (
     <div className="gameDiv container">

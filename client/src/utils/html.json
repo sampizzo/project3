@@ -1,50 +1,218 @@
 [
     {
       "id": 1,
-      "syntax": "a"
+      "syntax": "<html>"
     },
     {
       "id": 2,
-      "syntax": "b"
+      "syntax": "</html>"
     },
     {
       "id": 3,
-      "syntax": "c"
+      "syntax": "<title>"
     },
     {
       "id": 4,
-      "syntax": "d"
+      "syntax": "</title>"
     },
     {
       "id": 5,
-      "syntax": "e"
+      "syntax": "<head>"
     },
     {
       "id": 6,
-      "syntax": "f"
+      "syntax": "</head>"
     },
     {
       "id": 7,
-      "syntax": "g"
+      "syntax": "<body>"
     },
     {
       "id": 8,
-      "syntax": "h"
+      "syntax": "</body>"
     },
     {
       "id": 9,
-      "syntax": "i"
+      "syntax": "<h1>"
     },
     {
       "id": 10,
-      "syntax": "j"
+      "syntax": "</h1>"
     },
     {
       "id": 11,
-      "syntax": "k"
+      "syntax": "<p>"
     },
     {
       "id": 12,
-      "syntax": "l"
+      "syntax": "</p>"
+    },
+    {
+      "id": 13,
+      "syntax": "<b>"
+    },
+    {
+      "id": 14,
+      "syntax": "</b>"
+    },
+    {
+      "id": 15,
+      "syntax": "<i>"
+    },
+    {
+      "id": 16,
+      "syntax": "</i>"
+    },
+    {
+      "id": 17,
+      "syntax": "<a>"
+    },
+    {
+      "id": 18,
+      "syntax": "</a>"
+    },
+    {
+      "id": 19,
+      "syntax": "<div>"
+    },
+    {
+      "id": 20,
+      "syntax": "</div>"
+    },
+    {
+      "id": 21,
+      "syntax": "<img src=\"filename.jpg\">"
+    },
+    {
+      "id": 22,
+      "syntax": "<ul>"
+    },
+    {
+      "id": 23,
+      "syntax": "</ul>"
+    },
+    {
+      "id": 24,
+      "syntax": "<li>"
+    },
+    {
+      "id": 25,
+      "syntax": "</li>"
+    },
+    {
+      "id": 26,
+      "syntax": "<strong>"
+    },
+    {
+      "id": 27,
+      "syntax": "</strong>"
+    },
+    {
+      "id": 28,
+      "syntax": "<h2>"
+    },
+    {
+      "id": 29,
+      "syntax": "</h2>"
+    },
+    {
+      "id": 30,
+      "syntax": "<b>"
+    },
+    {
+      "id": 31,
+      "syntax": "</b>"
+    },
+    {
+      "id": 32,
+      "syntax": "<ol>"
+    },
+    {
+      "id": 33,
+      "syntax": "</ol>"
+    },
+    {
+      "id": 34,
+      "syntax": "<table>"
+    },
+    {
+      "id": 35,
+      "syntax": "</table>"
+    },
+    {
+      "id": 36,
+      "syntax": "<tr>"
+    },
+    {
+      "id": 37,
+      "syntax": "</tr>"
+    },
+    {
+      "id": 38,
+      "syntax": "<th>"
+    },
+    {
+      "id": 39,
+      "syntax": "</th>"
+    },
+    {
+      "id": 40,
+      "syntax": "<td>"
+    },
+    {
+      "id": 41,
+      "syntax": "</td>"
+    },
+    {
+      "id": 42,
+      "syntax": "<form>"
+    },
+    {
+      "id": 43,
+      "syntax": "</form>"
+    },
+    {
+      "id": 44,
+      "syntax": "<input>"
+    },
+    {
+      "id": 45,
+      "syntax": "</input>"
+    },
+    {
+      "id": 46,
+      "syntax": "<select>"
+    },
+    {
+      "id": 47,
+      "syntax": "</select>"
+    },
+    {
+      "id": 48,
+      "syntax": "<option>"
+    },
+    {
+      "id": 49,
+      "syntax": "</option>"
+    },
+    {
+      "id": 50,
+      "syntax": "<textarea>"
+    },
+    {
+      "id": 51,
+      "syntax": "</textarea>"
+    },
+    {
+      "id": 52,
+      "syntax": "<!-- comment-->"
+    },
+    {
+      "id": 53,
+      "syntax": "<!DOCTYPE html>"
+    },
+    {
+      "id": 54,
+      "syntax": "<html lang=\"en\">"
     }
   ]

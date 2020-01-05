@@ -11,9 +11,6 @@ function Game() {
   const[index, setIndex] = useState(0)
   const[word, setWord] = useState(htmlJson[0].syntax.split("").map(letter=> {return({char: letter, guessed: false})}))
   const[wordIndex, setWordIndex] = useState(0)
-  
- 
-
 
   useKeyPress(key => {
     console.log(key, word[index])
@@ -45,7 +42,7 @@ useEffect(()=> {
   return (
     <div>
     <div className="gameDiv container">
-        <div key={+new Date()} className="word">
+        <div key={+new Date(wordIndex)} className="word">
         {/* {this.state.html.map(html=> ( */}
           <syntaxComponent>{word.map(letter => <span className= {letter.guessed? "guessed" : "unguessed"}>{letter.char}</span>)}</syntaxComponent>
           {/* ))} */}

@@ -1,33 +1,44 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import syntaxComponent from "../Syntax";
+import syntaxComponent from "../syntax";
 import htmlJson from "../../utils/html.json"
 import useKeyPress from '../../hooks/useKeyPress';
 import GameForm from '../gameForm/gameForm';
 import { PromiseProvider } from "mongoose";
 
+
 function Game() {
-  const[html, setHtml] = useState(htmlJson)
   const[index, setIndex] = useState(0)
-  const[current, setCurrent] = useState(html[0])
-  const[check, setCheck] = useState([])
+  const[word, setWord] = useState(htmlJson[0].syntax.split("").map(letter=> {return({char: letter, guessed: false})}))
+  const[wordIndex, setWordIndex] = useState(0)
+  
+ 
 
 
   useKeyPress(key => {
-    
-    console.log(key, current.syntax)
+    console.log(key, word[index])
     // console.log(check)
-    if (key === current.syntax) {
-      setCheck([...check, key])
-      // let newIndex =  index + 1
-      // setIndex(newIndex);
+    if (key === word[index].char) {
+      word[index].guessed = true;
+      let newIndex =  index + 1
+      if (newIndex === word.length) {
+        setWordIndex(wordIndex + 1)
+
+      }
+      setIndex(newIndex);
       // current.syntax = newIndex
-    //   setCurrent(htmlJson[index]);
       // setTimeout(console.log("check: " + check),1000)
   
     }
+  
 });
-useEffect(()=> {console.log(check)},[check]) 
+
+useEffect(()=> {
+  let newWord = htmlJson[wordIndex].syntax.split("").map(letter=> {return({char: letter, guessed: false})})
+  setWord(newWord)
+  setIndex(0)
+
+},[wordIndex]) 
 
 
 
@@ -36,7 +47,7 @@ useEffect(()=> {console.log(check)},[check])
     <div className="gameDiv container">
         <div key={+new Date()} className="word">
         {/* {this.state.html.map(html=> ( */}
-          <syntaxComponent>{current.syntax}</syntaxComponent>
+          <syntaxComponent>{word.map(letter => <span className= {letter.guessed? "guessed" : "unguessed"}>{letter.char}</span>)}</syntaxComponent>
           {/* ))} */}
         </div>
     </div>

@@ -1,11 +1,11 @@
 [
     {
       "id": 1,
-      "syntax": "a"
+      "syntax": "cat"
     },
     {
       "id": 2,
-      "syntax": "b"
+      "syntax": "dog"
     },
     {
       "id": 3,

@@ -1,11 +1,19 @@
 [
     {
       "id": 1,
+<<<<<<< HEAD
+      "syntax": "cat"
+    },
+    {
+      "id": 2,
+      "syntax": "dog"
+=======
       "syntax": "<html>"
     },
     {
       "id": 2,
       "syntax": "</html>"
+>>>>>>> b70b782e2dd3cd3cb3c9e813610cd940ad9052f8
     },
     {
       "id": 3,

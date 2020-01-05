@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import syntaxComponent from "../syntax";
+import syntaxComponent from "../Syntax";
 import htmlJson from "../../utils/html.json"
 import useKeyPress from '../../hooks/useKeyPress';
+import GameForm from '../gameForm/gameForm';
+import { PromiseProvider } from "mongoose";
 
 function Game() {
   const[html, setHtml] = useState(htmlJson)
@@ -30,12 +32,15 @@ useEffect(()=> {console.log(check)},[check])
 
 
   return (
+    <div>
     <div className="gameDiv container">
         <div key={+new Date()} className="word">
         {/* {this.state.html.map(html=> ( */}
           <syntaxComponent>{current.syntax}</syntaxComponent>
           {/* ))} */}
         </div>
+    </div>
+      <GameForm />
     </div>
   );
 

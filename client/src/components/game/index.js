@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./style.css";
-import syntaxComponent from "../syntax";
+import syntaxComponent from "../Syntax";
 import htmlJson from "../../utils/html.json"
 import useKeyPress from '../../hooks/useKeyPress';
+import GameForm from '../GameForm/GameForm';
+import { PromiseProvider } from "mongoose";
 
 
 function Game() {
@@ -33,12 +35,15 @@ const check = []
 console.log("check: " + check.length)
 
   return (
+    <div>
     <div className="gameDiv container">
         <div className="word">
         {/* {this.state.html.map(html=> ( */}
           <syntaxComponent>{current.syntax}</syntaxComponent>
           {/* ))} */}
         </div>
+    </div>
+      <GameForm />
     </div>
   );
 

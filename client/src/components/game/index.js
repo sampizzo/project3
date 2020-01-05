@@ -3,7 +3,7 @@ import "./style.css";
 import syntaxComponent from "../Syntax";
 import htmlJson from "../../utils/html.json"
 import useKeyPress from '../../hooks/useKeyPress';
-import GameForm from '../GameForm/GameForm';
+import GameForm from '../gameForm/gameForm';
 import { PromiseProvider } from "mongoose";
 
 

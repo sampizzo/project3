@@ -6,7 +6,7 @@ import useKeyPress from "../../hooks/useKeyPress";
 import GameForm from "../gameForm/gameForm";
 import { PromiseProvider } from "mongoose";
 import ScoreBoard from "../scoreboard";
-import Navbar from "../Navbar/index.js";
+// import Navbar from "../Navbar/index.js";
 
 
 //Gifs and images
@@ -101,7 +101,6 @@ function Game(props) {
 
   return (
     <div className="container">
-      <Navbar />
       <div className="gameDiv">
         <div id="lvl" className="gif">
           <img src={flagpole}></img>

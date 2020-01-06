@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
-
-// Depending on the current path, this component sets the "active" class on the appropriate navigation link item
+import 'font-awesome/css/font-awesome.min.css';
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -25,11 +24,14 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
-              to="/discover"
+              to="/login"
               className={window.location.pathname === "/signin" ? "nav-link active" : "nav-link"}
             >
-           <i className="fas fa-user"></i>
+                    <i className="fa fa-user"></i>       
+
             </Link>
+
+
           </li>
         </ul>
       </div>

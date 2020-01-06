@@ -1,9 +1,28 @@
+body {
+  background-image: url(./clouds.jpg);
+  background-size: contain;
+  background-size: cover;
+  background-color: rgba(238, 238, 238, 0.5) !important;
+  background-blend-mode: color;
+
+}
 .gameDiv {
     height: 600px;
-    width: 600px;
+    width: 100%;
     border-style: solid;
-    border-width: 10px;
-    border-color: black;
+    border-width: 2px;
+    border-color: red;
+    background-image: url(./marioBackground.jpg);
+    background-size: contain;
+    background-size: cover;
+
+}
+
+.scoreBoard {
+  text-align: center;
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
 }
 
 .word {
@@ -13,6 +32,8 @@
     animation-name: example;
     animation-duration: 10s;
     animation-timing-function: linear;
+    font-size: 50px;
+    font-weight: bold;
   }
   
   
@@ -21,3 +42,9 @@
     0%   {left:0px; top:0px;}
     100% {left:0px; top:600px;}
   }
+
+  .guessed {
+    color: red
+  }
+
+  

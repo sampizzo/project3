@@ -3,18 +3,18 @@ import { useState, useEffect } from 'react';
 //1
 const useKeyPress = callback => {
   //2
-  const [keyPressed, setKeyPressed] = useState();
+  const [keyPressed, setKeyPressed] = useState(null);
   //3
   useEffect(() => {
     //4
-    const downHandler = ({ key }) => {
+    const upHandler = ({ key }) => {
       if (keyPressed !== key && key.length === 1) {
         setKeyPressed(key);
         callback && callback(key);
       }
     };
     //5
-    const upHandler = () => {
+    const downHandler = () => {
       setKeyPressed(null);
     };
 

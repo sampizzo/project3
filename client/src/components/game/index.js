@@ -12,24 +12,21 @@ import Navbar from "../Navbar/index.js";
 //UIFX Audio imports
 import UIfx from "uifx";
 import coinAudio from "./coin.mp3";
-import themeAudio from "./Birabuto-Kingdom.mp3";
-import lvlAudio from "./lvl.mp3";
-import lifeAudio from "./lostLife.wav";
-
-const coin = new UIfx(coinAudio, {
-  volume: 0.6, // number between 0.0 ~ 1.0
-  throttleMs: 50
-});
-const theme = new UIfx(themeAudio, {
-  volume: 0.05, // number between 0.0 ~ 1.0
-  throttleMs: 100
-});
-const life = new UIfx(lifeAudio, {
-  volume: 1.0, // number between 0.0 ~ 1.0
-  throttleMs: 100
-});
-const lvl = new UIfx(lvlAudio);
+import themeAudio from "./Birabuto-Kingdom.mp3"
+import lvlAudio from "./lvl.mp3"
+const coin = new UIfx(coinAudio, 
+  {
+    volume: 0.4, // number between 0.0 ~ 1.0
+    throttleMs: 50
+  });
+  const theme = new UIfx(themeAudio, 
+    {
+      volume: 0.4, // number between 0.0 ~ 1.0
+      throttleMs: 50
+    });
+const lvl = new UIfx(lvlAudio)
 theme.play();
+
 
 function Game(props) {
   const [index, setIndex] = useState(0);
@@ -42,7 +39,7 @@ function Game(props) {
   const [score, setScore] = useState(0);
   const [lvl, setLvl] = useState(1);
   const [lives, setLives] = useState(3);
-  const [mistakes, setMistakes] = useState(0);
+
 
   useKeyPress(key => {
     console.log(key, word[index]);
@@ -53,25 +50,20 @@ function Game(props) {
       if (newIndex === word.length) {
         setScore(score + 100);
         coin.play();
-        if (score % 10 === 0) {
+        if (
+          score % 10 === 0
+        ) {
           setLvl(lvl + 1);
         }
         setWordIndex(wordIndex + 1);
-      } else if (newIndex == !word.length) {
-        setIndex(lives - 1);
-        if (lives === 0) {
+      }
+      else if (newIndex ==! word.length) {
+        setIndex(lives - 1)
+        if (lives === -1) {
           //game over
         }
       }
       setIndex(newIndex);
-    }
-    if (key !== word[index].char) {
-      setMistakes(mistakes + 1);
-      if (mistakes === 3) {
-        setLives(lives - 1);
-        setMistakes(0);
-        life.play();
-      }
     }
   });
 
@@ -107,7 +99,7 @@ function Game(props) {
       <div>
         <div className="scoreBoard">
           <h2>
-            Coins: {score} Level: {lvl} Lives: {lives} Mistakes: {mistakes}
+            Coins: {score} Level: {lvl} Lives: {lives}
           </h2>
         </div>
       </div>

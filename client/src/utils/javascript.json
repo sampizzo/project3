@@ -1,50 +1,218 @@
 [
-    {
-      "id": 1,
-      "syntax": ""
-    },
-    {
-      "id": 2,
-      "syntax": ""
-    },
-    {
-      "id": 3,
-      "syntax": ""
-    },
-    {
-      "id": 4,
-      "syntax": ""
-    },
-    {
-      "id": 5,
-      "syntax": ""
-    },
-    {
-      "id": 6,
-      "syntax": ""
-    },
-    {
-      "id": 7,
-      "syntax": ""
-    },
-    {
-      "id": 8,
-      "syntax": ""
-    },
-    {
-      "id": 9,
-      "syntax": ""
-    },
-    {
-      "id": 10,
-      "syntax": ""
-    },
-    {
-      "id": 11,
-      "syntax": ""
-    },
-    {
-      "id": 12,
-      "syntax": ""
-    }
-  ]
+  {
+    "id": 1,
+    "syntax": "<script>"
+  },
+  {
+    "id": 2,
+    "syntax": "</script>"
+  },
+  {
+    "id": 3,
+    "syntax": "getElementById()"
+  },
+  {
+    "id": 4,
+    "syntax": "innerHTML"
+  },
+  {
+    "id": 5,
+    "syntax": "var"
+  },
+  {
+    "id": 6,
+    "syntax": "function()"
+  },
+  {
+    "id": 7,
+    "syntax": "var x, y;"
+  },
+  {
+    "id": 8,
+    "syntax": "x = 2;"
+  },
+  {
+    "id": 9,
+    "syntax": "y = 8;"
+  },
+  {
+    "id": 10,
+    "syntax": "=="
+  },
+  {
+    "id": 11,
+    "syntax": "==="
+  },
+  {
+    "id": 12,
+    "syntax": "!="
+  },
+  {
+    "id": 13,
+    "syntax": "!=="
+  },
+  {
+    "id": 14,
+    "syntax": ">"
+  },
+  {
+    "id": 15,
+    "syntax": "<"
+  },
+  {
+    "id": 16,
+    "syntax": ">="
+  },
+  {
+    "id": 17,
+    "syntax": "<="
+  },
+  {
+    "id": 18,
+    "syntax": "?"
+  },
+  {
+    "id": 19,
+    "syntax": "&&"
+  },
+  {
+    "id": 20,
+    "syntax": "||"
+  },
+  {
+    "id": 21,
+    "syntax": "!"
+  },
+  {
+    "id": 22,
+    "syntax": "&"
+  },
+  {
+    "id": 23,
+    "syntax": "+"
+  },
+  {
+    "id": 24,
+    "syntax": "-"
+  },
+  {
+    "id": 25,
+    "syntax": "*"
+  },
+  {
+    "id": 26,
+    "syntax": "**"
+  },
+  {
+    "id": 27,
+    "syntax": "/"
+  },
+  {
+    "id": 28,
+    "syntax": "%"
+  },
+  {
+    "id": 29,
+    "syntax": "++"
+  },
+  {
+    "id": 30,
+    "syntax": "--"
+  },
+  {
+    "id": 31,
+    "syntax": "+="
+  },
+  {
+    "id": 32,
+    "syntax": "-="
+  },
+  {
+    "id": 33,
+    "syntax": "return"
+  },
+  {
+    "id": 34,
+    "syntax": "object.property"
+  },
+  {
+    "id": 35,
+    "syntax": "this.property"
+  },
+  {
+    "id": 36,
+    "syntax": "onclick"
+  },
+  {
+    "id": 37,
+    "syntax": "onmouseover"
+  },
+  {
+    "id": 38,
+    "syntax": "onmouseout"
+  },
+  {
+    "id": 39,
+    "syntax": "onchange"
+  },
+  {
+    "id": 40,
+    "syntax": "onkeydown"
+  },
+  {
+    "id": 41,
+    "syntax": "onload"
+  },
+  {
+    "id": 42,
+    "syntax": "var myArray = [item1, item2];"
+  },
+  {
+    "id": 43,
+    "syntax": "pop()"
+  },
+  {
+    "id": 44,
+    "syntax": "push()"
+  },
+  {
+    "id": 45,
+    "syntax": "shift()"
+  },
+  {
+    "id": 46,
+    "syntax": "unshift()"
+  },
+  {
+    "id": 47,
+    "syntax": "forEach()"
+  },
+  {
+    "id": 48,
+    "syntax": "for (i=0; i < array.length; i++)"
+  },
+  {
+    "id": 49,
+    "syntax": "if (condition){}"
+  },
+  {
+    "id": 50,
+    "syntax": "else if (condition){}"
+  },
+  {
+    "id": 51,
+    "syntax": "else {}"
+  },
+  {
+    "id": 52,
+    "syntax": "true"
+  },
+  {
+    "id": 53,
+    "syntax": "false"
+  },
+  {
+    "id": 54,
+    "syntax": "null"
+  }
+]

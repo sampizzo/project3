@@ -14,9 +14,7 @@ import flagpole from './flagpole.gif';
 import coinGif from './coin.gif';
 import dieGif from './dies.gif';
 import extraLife from './1up.png';
-// for ({extaLife} = 0; {extraLife} = lives; {extraLife} ++) {
-//    {extraLife}
-// }
+
 
 //UIFX Audio imports
 import UIfx from "uifx";
@@ -40,6 +38,7 @@ const life = new UIfx(lifeAudio, {
 const lvl = new UIfx(lvlAudio);
 theme.play();
 
+
 function Game(props) {
   const [index, setIndex] = useState(0);
   const [word, setWord] = useState(
@@ -55,17 +54,13 @@ function Game(props) {
   const [hide, setHide] = useState(false);
 
   //timer
-  // useEffect(() => {
+  
     const timer = setInterval(function() {
       setWordIndex(wordIndex + 1);
       setLives(lives - 1);
       life.play();
     }, 10000);
-  // }, []);
 
-  // const timerFunc =
-
-  console.log("lives:" + lives);
 
   useKeyPress(key => {
     console.log(key, word[index]);
@@ -81,21 +76,14 @@ function Game(props) {
 
         }
         setWordIndex(wordIndex + 1);
-      } else if (newIndex == !word.length) {
-        setIndex(lives - 1);
-        if (lives === 0) {
+      }
+      else if (newIndex ==! word.length) {
+        setIndex(lives - 1)
+        if (lives === -1) {
           //game over
         }
       }
       setIndex(newIndex);
-    }
-    if (key !== word[index].char) {
-      setMistakes(mistakes + 1);
-      if (mistakes === 3) {
-        setLives(lives - 1);
-        setMistakes(0);
-        life.play();
-      }
     }
   });
 

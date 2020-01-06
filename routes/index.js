@@ -7,12 +7,20 @@ const passport = require("../passport/index")
 // API Routes
 router.use("/api", apiRoutes);
 
+router.get('/getuser', (req, res) => {
+	console.log("getuser was hit");
+	res.json(req.user);
+});
+
 // Route to signup, this route save the username and password to the db
 router.post('/signup', (req, res) => {
+	console.log("req.body from signup route is:")
+	console.log(req.body);
 	const { username, password } = req.body
 	// ADD VALIDATION
 	User.findOne({ 'username': username }, (err, userMatch) => {
 		if (userMatch) {
+			console.log("Error: username already exists");
 			return res.json({
 				error: `Sorry, already a user with the username: ${username}`
 			})
@@ -21,10 +29,24 @@ router.post('/signup', (req, res) => {
 			'username': username,
 			'password': password
 		})
-		newUser.save((err, savedUser) => {
-			if (err) return res.json(err)
-			return res.json(savedUser)
+		console.log("newUser is:");
+		console.log(newUser);
+		User.create({
+			'username': username,
+			'password': password
 		})
+		.then(function() {
+			console.log("success");
+			res.json(req.user);
+		})
+		.catch(function(err) {
+			console.log(err);
+			res.json(err);
+		})
+		// newUser.save((err, savedUser) => {
+		// 	if (err) return res.json(err)
+		// 	return res.json(savedUser)
+		// })
 	})
 })
 // Route to login
@@ -50,8 +72,8 @@ router.post(
 )
 
 // If no API routes are hit, send the React app
-router.use(function(req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
+// router.use(function(req, res) {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
 
 module.exports = router;

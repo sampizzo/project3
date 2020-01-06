@@ -29,11 +29,8 @@
     "connect-mongo": "^3.2.0",
     "express": "^4.16.3",
     "express-session": "^1.17.0",
-<<<<<<< HEAD
     "font-awesome": "^4.7.0",
-=======
     "faker": "^4.1.0",
->>>>>>> 35b7aa30b11a67bfd362e9f33ad2788ff5d0be83
     "if-env": "^1.0.4",
     "json-schema-traverse": "^0.4.1",
     "mongoose": "^5.8.2",

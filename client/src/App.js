@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import GamePage from "./pages/game";
 import SignUpPage from "./pages/signup";
 import LoginPage from "./pages/login";
+import BonusPage from "./pages/bonus";
+
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
           <Route exact path="/signup" component={SignUpPage} /> 
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/game" component={GamePage} />
+          <Route exact path="/bonus" component={BonusPage} />
           </Switch>
       </div>
     </Router>

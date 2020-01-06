@@ -3,7 +3,7 @@ import "./style.css";
 
 function syntaxComponent(props) {
   return (
-   <p>{props.syntax}</p>
+   <p>{props.Syntax}</p>
   );
 }
 

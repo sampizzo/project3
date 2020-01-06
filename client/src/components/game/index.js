@@ -6,7 +6,7 @@ import useKeyPress from "../../hooks/useKeyPress";
 import GameForm from "../gameForm/gameForm";
 import { PromiseProvider } from "mongoose";
 import ScoreBoard from "../scoreboard";
-import Navbar from "../Navbar/index.js";
+// import Navbar from "../Navbar/index.js";
 
 
 //UIFX Audio imports
@@ -81,7 +81,6 @@ function Game(props) {
 
   return (
     <div className="container">
-    <Navbar />
       <div className="gameDiv">
         <div key={+new Date(wordIndex)} className="word">
           {/* {this.state.html.map(html=> ( */}

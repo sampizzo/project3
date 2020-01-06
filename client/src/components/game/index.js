@@ -5,12 +5,15 @@ import htmlJson from "../../utils/html.json"
 import useKeyPress from '../../hooks/useKeyPress';
 import GameForm from '../gameForm/gameForm';
 import { PromiseProvider } from "mongoose";
+import ScoreBoard from "../scoreboard"
 
 
-function Game() {
+
+function Game(props) {
   const[index, setIndex] = useState(0)
   const[word, setWord] = useState(htmlJson[0].syntax.split("").map(letter=> {return({char: letter, guessed: false})}))
-  const[wordIndex, setWordIndex] = useState(0)
+  const[wordIndex, setWordIndex] = useState(0);
+  const [score, setScore] = useState(0);
 
   useKeyPress(key => {
     console.log(key, word[index])
@@ -19,8 +22,9 @@ function Game() {
       word[index].guessed = true;
       let newIndex =  index + 1
       if (newIndex === word.length) {
-        setWordIndex(wordIndex + 1)
-
+        setScore(score + 10);
+        console.log("Score: " + score);
+        setWordIndex(wordIndex + 1);
       }
       setIndex(newIndex);
       // current.syntax = newIndex
@@ -37,6 +41,10 @@ useEffect(()=> {
 
 },[wordIndex]) 
 
+useEffect(()=> {
+  setScore(score + 10)
+},score)
+
 
 
   return (
@@ -49,6 +57,7 @@ useEffect(()=> {
         </div>
     </div>
       <GameForm />
+      <ScoreBoard />
     </div>
   );
 

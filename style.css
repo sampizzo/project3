@@ -145,3 +145,11 @@ button {
     border-color: $bar;
   }
 }
+.rcorners {
+  border-radius: 25px;
+  border: 20px double #E60012;
+  background: #ffffff;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}

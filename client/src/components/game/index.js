@@ -52,11 +52,7 @@ function Game(props) {
   // const [gif, setGif] = useState(none);
   let [counter, setCounter] = useState(10);
   let decrement;
-  // let timer;
-  //   state = {
-  //     timer: 10
-
-  //   }
+ 
   console.log(counter);
 
   useEffect(() => {
@@ -84,9 +80,6 @@ function Game(props) {
         }
         setWordIndex(wordIndex + 1);
       }
-      // else if (newIndex ==! word.length) {
-      //   setLives(lives - 1);
-      //   setWordIndex(wordIndex + 1);
 
       //   // if (lives === 0) {
       //   //   return <Redirect to="/bonus" />;
@@ -157,9 +150,6 @@ function Game(props) {
   );
 }
 
-// {if (lives >== 1) {
-//   lives === <img src={extraLife}></img>
-// }}
 export default Game;
 
 

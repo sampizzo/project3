@@ -7,7 +7,7 @@ body {
 
 }
 .gameDiv {
-    height: 600px;
+    height: 700px;
     width: 100%;
     border-style: solid;
     border-width: 2px;
@@ -23,6 +23,7 @@ body {
   border-style: solid;
   border-width: 2px;
   border-color: red;
+  background-color:lightskyblue;
 }
 
 .word {
@@ -48,6 +49,10 @@ body {
   }
 
   .gif {
+    display: none;
+  }
+
+  .none {
     display: none;
   }
 

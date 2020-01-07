@@ -3,18 +3,16 @@ import "./style.css";
 import syntaxComponent from "../syntax";
 import htmlJson from "../../utils/html.json";
 import useKeyPress from "../../hooks/useKeyPress";
-import GameForm from "../gameForm/gameForm";
 import { PromiseProvider } from "mongoose";
 import ScoreBoard from "../scoreboard";
-// import Navbar from "../Navbar/index.js";
-
+import Navbar from "../Navbar/index.js";
+import { Redirect } from "react-router-dom";
 
 //Gifs and images
-import flagpole from './flagpole.gif';
-import coinGif from './coin.gif';
-import dieGif from './dies.gif';
-import extraLife from './1up.png';
-
+import flagpole from "./flagpole.gif";
+import coinGif from "./coin.gif";
+import dieGif from "./dies.gif";
+import extraLife from "./1up.png";
 
 //UIFX Audio imports
 import UIfx from "uifx";
@@ -38,7 +36,6 @@ const life = new UIfx(lifeAudio, {
 const lvl = new UIfx(lvlAudio);
 theme.play();
 
-
 function Game(props) {
   const [index, setIndex] = useState(0);
   const [word, setWord] = useState(
@@ -51,39 +48,64 @@ function Game(props) {
   const [lvl, setLvl] = useState(1);
   const [lives, setLives] = useState(3);
   const [mistakes, setMistakes] = useState(0);
-  const [hide, setHide] = useState(false);
+  // const [show, setShow] = useState(false);
+  // const [gif, setGif] = useState(none);
+  let [counter, setCounter] = useState(10);
+  let decrement;
+  // let timer;
+  //   state = {
+  //     timer: 10
 
-  //timer
-  
-    const timer = setInterval(function() {
-      setWordIndex(wordIndex + 1);
-      setLives(lives - 1);
-      life.play();
-    }, 10000);
+  //   }
+  console.log(counter);
 
-
+  useEffect(() => {
+    let timer = setInterval(() => {
+      setCounter( counter => counter - 1);
+    }, 1000);
+  }, []);
+  if (counter == 0) {
+    setWordIndex(wordIndex + 1);
+    setLives(lives - 1);
+    life.play();
+    setCounter(10);
+  }
   useKeyPress(key => {
-    console.log(key, word[index]);
+    // console.log(key, word[index]);
     if (key === word[index].char) {
       word[index].guessed = true;
       let newIndex = index + 1;
       if (newIndex === word.length) {
         setScore(score + 100);
         coin.play();
-        clearInterval(timer);
+        setCounter(10);
         if (score % 10 === 0) {
           setLvl(lvl + 1);
-
         }
         setWordIndex(wordIndex + 1);
       }
-      else if (newIndex ==! word.length) {
-        setIndex(lives - 1)
-        if (lives === -1) {
-          //game over
-        }
-      }
+      // else if (newIndex ==! word.length) {
+      //   setLives(lives - 1);
+      //   setWordIndex(wordIndex + 1);
+
+      //   // if (lives === 0) {
+      //   //   return <Redirect to="/bonus" />;
+      //   //   //game over
+      //   // }
+      // }
       setIndex(newIndex);
+    }
+    if (word.animationEnd) {
+      setLives(lives - 1);
+      setWordIndex(wordIndex + 1);
+    }
+    if (key !== word[index].char) {
+      setMistakes(mistakes + 1);
+      if (mistakes === 3) {
+        setLives(lives - 1);
+        setMistakes(0);
+        life.play();
+      }
     }
   });
 
@@ -95,12 +117,14 @@ function Game(props) {
     setIndex(0);
   }, [wordIndex]);
 
-  useEffect(() => {
-    setScore(score);
-  }, score);
+  // useEffect(() => {
+  //   setScore(score);
+  // }, score);
 
   return (
     <div className="container">
+      <Navbar />
+      <div></div>
       <div className="gameDiv">
         <div id="lvl" className="gif">
           <img src={flagpole}></img>
@@ -111,23 +135,21 @@ function Game(props) {
         <div id="die" className="gif">
           <img src={dieGif}></img>
         </div>
-          <div key={+new Date(wordIndex)} className="word">
-            {/* {this.state.html.map(html=> ( */}
-            <syntaxComponent>
-              {word.map(letter => (
-                <span className={letter.guessed ? "guessed" : "unguessed"}>
-                  {letter.char}
-                </span>
-              ))}
-            </syntaxComponent>
-            {/* ))} */}
+        <div key={+new Date(wordIndex)} className="word">
+          <syntaxComponent>
+            {word.map(letter => (
+              <span className={letter.guessed ? "guessed" : "unguessed"}>
+                {letter.char}
+              </span>
+            ))}
+          </syntaxComponent>
         </div>
       </div>
-      {/* <GameForm /> */}
       <div>
         <div className="scoreBoard">
           <h2>
-            Coins: {score} Level: {lvl} Lives:{lives} Mistakes: {mistakes}
+            Coins: {score} Level: {lvl} Lives: {lives} Mistakes: {mistakes}{" "}
+            Time: {counter}
           </h2>
         </div>
       </div>
@@ -135,4 +157,9 @@ function Game(props) {
   );
 }
 
+// {if (lives >== 1) {
+//   lives === <img src={extraLife}></img>
+// }}
 export default Game;
+
+

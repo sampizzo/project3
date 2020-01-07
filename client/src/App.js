@@ -6,6 +6,7 @@ import LoginPage from "./pages/login";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"
 import BonusPage from "./pages/bonus";
+import MenuPage from "./pages/menu";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/game" component={GamePage} />
           <Route exact path="/bonus" component={BonusPage} />
+          <Route exact path="/menu" component={MenuPage} />
           </Switch>
       </div>
       <Footer></Footer>

@@ -8,7 +8,7 @@ import Footer from "./components/Footer"
 import BonusPage from "./pages/bonus";
 import MenuPage from "./pages/menu";
 import JavascriptPage from "./pages/javascript"
-
+import SpecialPage from "./pages/special"
 function App() {
   return (
     <Router>
@@ -21,6 +21,7 @@ function App() {
           <Route exact path="/bonus" component={BonusPage} />
           <Route exact path="/menu" component={MenuPage} />
           <Route exact path="/javascript" component={JavascriptPage}/>
+          <Route exact path="/special" component={SpecialPage}/>
 
           </Switch>
       </div>

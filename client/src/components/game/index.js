@@ -60,18 +60,8 @@ function Game(props) {
   console.log(counter);
 
   useEffect(() => {
-    //   decrement = setInterval(() => {
-    //     setCounter(counter - 1)
-    //   }, 1000);
-    //     // return () => setInterval(10);
-    // setCounter(10)
-    //timer
     let timer = setInterval(() => {
-      // setCounter(10)
       setCounter( counter => counter - 1);
-
-
-      
     }, 1000);
   }, []);
   if (counter == 0) {

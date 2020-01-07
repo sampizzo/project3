@@ -34,11 +34,11 @@ var UserSchema = new Schema({
   // `email` must be unique
   // `email` must match the regex pattern below and throws a custom error message if it does not
   // You can read more about RegEx Patterns here https://www.regexbuddy.com/regex.html
-  email: {
-    type: String,
-    unique: true,
-    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
-  },
+  // email: {
+  //   type: String,
+  //   unique: true,
+  //   match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+  // },
   // `date` must be of type Date. The default value is the current date
   userCreated: {
     type: Date,

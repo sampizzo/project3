@@ -15,7 +15,9 @@ class Menu extends React.Component {
           <Link to="/game">
           <button>html</button> 
           </Link>
+          <Link to="/javascript">
           <button>javascript</button>
+          </Link>
           <button>jquery</button>
           <button>special</button>
         </div>

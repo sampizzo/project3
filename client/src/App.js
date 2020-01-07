@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"
 import BonusPage from "./pages/bonus";
 import MenuPage from "./pages/menu";
-
+import JavascriptPage from "./pages/javascript"
 
 function App() {
   return (
@@ -20,6 +20,8 @@ function App() {
           <Route exact path="/game" component={GamePage} />
           <Route exact path="/bonus" component={BonusPage} />
           <Route exact path="/menu" component={MenuPage} />
+          <Route exact path="/javascript" component={JavascriptPage}/>
+
           </Switch>
       </div>
       <Footer></Footer>

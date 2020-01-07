@@ -7,6 +7,7 @@ body {
 
 }
 .gameDiv {
+    margin-top: 5%;
     height: 700px;
     width: 100%;
     border-style: solid;

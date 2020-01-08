@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import axios from "axios";
 import Super from "./super.png";
-import Typing from "./typing.png";
+import Syntax from "./syntax.png";
 import Tutor from "./tutor.png";
 import Mario from "./MarioProfile.png";
 import Coin from "./coin.png";
@@ -59,7 +59,7 @@ class Menu extends React.Component {
       <div className="container">
           <br/>
           <img className="super" src={Super}></img> <br/>
-          <img className="img"src={Typing}></img> <br/>
+          <img className="img"src={Syntax}></img> <br/>
           <img className="img"src={Tutor}></img>
 
         <div className="userCard">

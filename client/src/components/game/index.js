@@ -85,6 +85,7 @@ function Game(props) {
     setCounter(10);
     if (lives === 1) {
       saveScore();
+      saveCoin();
       setShow(true);
       // theme.setVolume(0);
       life.setVolume(0);
@@ -153,6 +154,7 @@ function Game(props) {
           // theme.setVolume(0);
           life.setVolume(0);
           saveScore();
+          saveCoin();
           setShow(true);
           console.log(show);
           gameOver.play();
@@ -196,14 +198,15 @@ function Game(props) {
             </syntaxComponent>
           </div>
           <div>
-            <div className="scoreBoard">
+          
+          </div>
+        </div>
+        <div className="scoreBoard">
               <h2>
                 Score: {score} Coins: {coinsCollected} Level: {lvl} Lives:{" "}
                 {lives} Mistakes: {mistakes} Time: {counter}
               </h2>
             </div>
-          </div>
-        </div>
       </div>
     </div>
   );

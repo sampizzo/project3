@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
-        Typing Tutor 
+        Syntax Tutor 
       </Link>
       <div>
         <ul className="navbar-nav">

@@ -1,9 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.css"
 // By extending the React.Component class, Counter inherits functionality from it
 class ScoreBoard extends React.Component {
   // Setting the initial state of the Counter component
 
+
+//Reload the game//////////////////////////////////
+  replay = () => {
+    window.location.reload(true);
+}
 
   // The render method returns the JSX that should be rendered
   render() {
@@ -18,8 +24,10 @@ class ScoreBoard extends React.Component {
           <h2>Total Words: {this.props.wordCount}</h2>
           <h2>Error Count: {this.props.errCount}</h2>
           <hr />
-          <button className="button">Return To Menu</button>
-          <button className="button">Replay</button>
+          <Link to="/menu">
+          <button className="button" >Return To Menu</button>
+          </Link>
+          <button className="button" onClick={this.replay}>Replay</button>
         </div>
       </div>
     );

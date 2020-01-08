@@ -5,7 +5,8 @@ import axios from "axios";
 import Super from "./super.png";
 import Typing from "./typing.png";
 import Tutor from "./tutor.png";
-
+import Mario from "./MarioProfile.png";
+import Coin from "./coin.png";
 
 class Menu extends React.Component {
   state = {
@@ -15,8 +16,19 @@ class Menu extends React.Component {
     highscore2: "",
     highscore3: "",
     user2: "",
-    user3: ""
+    user3: "",
+    userName: "",
+    coins: ""
   };
+  componentDidMount = () => {
+  axios.get("/getuser").then(result => {
+      console.log(result)
+      this.setState({userName: result.data.username})
+      this.setState({coins: result.data.coins})
+
+      console.log(this.state.userName)
+  })
+  }
   handleClick = event => {
     this.setState({ language: event.target.innerText });
     console.log(this.state.language);
@@ -51,7 +63,12 @@ class Menu extends React.Component {
           <img className="img"src={Tutor}></img>
 
         <div className="userCard">
-          <h1>User Info Goes Here</h1>
+        <img className="Mario" src={Mario}></img>
+          <h1>Welcome Back,</h1>
+          <h2>{this.state.userName}!</h2><br/>
+          <img className="Coin" src={Coin}></img>
+          <h3>x{this.state.coin}'s</h3>
+
         </div>
         <div className="gameCard">
           <h1>Game Pages Go Here</h1>
@@ -95,7 +112,7 @@ class Menu extends React.Component {
               </tr>
             </tbody>
           </table>
-          <Link to="/">
+          <Link to={`/${this.state.language}`}>
             <button className="button">
               Let's Play: {this.state.language}
             </button>

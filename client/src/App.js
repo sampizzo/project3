@@ -10,6 +10,7 @@ import MenuPage from "./pages/menu";
 import HomePage from "./pages/home";
 import JavascriptPage from "./pages/javascript";
 import SpecialPage from "./pages/special";
+import Footer from "./components/Footer"
 
 class App extends Component {
   state = {
@@ -46,6 +47,7 @@ class App extends Component {
               <Route exact path="/special" component={SpecialPage} />
             </Switch>
           </div>
+          <Footer></Footer>
         </Router>
       );
     } else {

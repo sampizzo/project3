@@ -4,13 +4,13 @@ import GamePage from "./pages/game";
 import SignUpPage from "./pages/signup";
 import LoginPage from "./pages/login";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import BonusPage from "./pages/bonus";
-import UserPage from "./pages/user";
 import Axios from "axios";
 import MenuPage from "./pages/menu";
+import HomePage from "./pages/home";
 import JavascriptPage from "./pages/javascript";
 import SpecialPage from "./pages/special";
+import Footer from "./components/Footer"
 
 class App extends Component {
   state = {
@@ -37,9 +37,9 @@ class App extends Component {
           <Navbar></Navbar>
           <div>
             <Switch>
+              <Route exact path="/" component={HomePage} /> 
               <Route exact path="/signup" component={SignUpPage} />
               <Route exact path="/login" component={LoginPage} />
-              <Route exact path="/user" component={UserPage} />
               <Route exact path="/HTML" component={GamePage} />
               <Route exact path="/bonus" component={BonusPage} />
               <Route exact path="/menu" component={MenuPage} />
@@ -56,11 +56,15 @@ class App extends Component {
           <Navbar></Navbar>
           <div>
             <Switch>
+              <Route exact path="/" component={HomePage} /> 
               <Route exact path="/signup" component={SignUpPage} />
               <Route exact path="/login" component={LoginPage} />
             </Switch>
           </div>
+<<<<<<< HEAD
           {/* <Footer></Footer> */}
+=======
+>>>>>>> 9b661fe62505d3a90588a3ce3bf976389cabce71
         </Router>
       );
     }

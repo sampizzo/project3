@@ -1,11 +1,8 @@
 const path = require("path");
 const router = require("express").Router();
-const apiRoutes = require("./api");
 const User = require("../models/User");
 const passport = require("../passport/index")
 
-// API Routes
-router.use("/api", apiRoutes);
 
 router.get('/getuser', (req, res) => {
 	console.log("getuser was hit");

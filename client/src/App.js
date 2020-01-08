@@ -6,7 +6,6 @@ import LoginPage from "./pages/login";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BonusPage from "./pages/bonus";
-import UserPage from "./pages/user";
 import Axios from "axios";
 import MenuPage from "./pages/menu";
 import HomePage from "./pages/home";
@@ -41,7 +40,6 @@ class App extends Component {
               <Route exact path="/" component={HomePage} /> 
               <Route exact path="/signup" component={SignUpPage} />
               <Route exact path="/login" component={LoginPage} />
-              <Route exact path="/user" component={UserPage} />
               <Route exact path="/HTML" component={GamePage} />
               <Route exact path="/bonus" component={BonusPage} />
               <Route exact path="/menu" component={MenuPage} />

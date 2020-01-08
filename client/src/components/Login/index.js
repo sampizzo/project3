@@ -45,7 +45,9 @@ class Login extends Component {
       return <Redirect to={{ pathname: this.state.redirectTo }} />;
     } else {
       return (
-          <div className="center" className="rcorners">
+        <div className="wrapper">
+          <div className="center">
+          <div id="login" className="rcorners">
             <h1>Login</h1>
             <p>Username</p>
             <input onChange={this.handleUsername}></input>
@@ -53,6 +55,8 @@ class Login extends Component {
             <input onChange={this.handlePassword}></input>
             <button onClick={this.handleSubmit}>Submit</button>
           </div>
+        </div>
+        </div>
       );
     }
   }

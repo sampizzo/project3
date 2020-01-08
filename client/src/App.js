@@ -4,7 +4,6 @@ import GamePage from "./pages/game";
 import SignUpPage from "./pages/signup";
 import LoginPage from "./pages/login";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import BonusPage from "./pages/bonus";
 import Axios from "axios";
 import MenuPage from "./pages/menu";
@@ -47,7 +46,6 @@ class App extends Component {
               <Route exact path="/special" component={SpecialPage} />
             </Switch>
           </div>
-          <Footer></Footer>
         </Router>
       );
     } else {
@@ -61,7 +59,6 @@ class App extends Component {
               <Route exact path="/login" component={LoginPage} />
             </Switch>
           </div>
-          <Footer></Footer>
         </Router>
       );
     }

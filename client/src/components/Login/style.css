@@ -1,8 +1,11 @@
+.center{
+  margin: auto;
+}
 .rcorners {
-    border-radius: 25px;
-    border: 20px double #E60012;
-    background: #ffffff;
-    padding: 20px; 
-    width: 400px;
-    height: auto;  
-  }
+  border-radius: 25px;
+  border: 20px double #e60012;
+  background: #ffffff;
+  padding: 20px;
+  width: 400px;
+  height: auto;
+}

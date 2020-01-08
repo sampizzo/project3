@@ -2,6 +2,7 @@
     background-color: white;
     border-radius: 1rem;
     text-align: center;
+    width: 50%;
     margin: auto;
     margin-top: 10%;
     padding-top: 3%;
@@ -9,8 +10,6 @@
     border-style: solid;
     border-color: rgba(229, 37, 33);
     border-width: 10px;
-    float: left;
-    
 }
 
 .button {
@@ -21,17 +20,3 @@
     padding: 1.5%;
 }
 
-.card {
-    background-color: white;
-    border-radius: 1rem;
-    text-align: center;
-    /* width: 50%; */
-    margin: auto;
-    margin-top: 10%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    border-style: solid;
-    border-color: rgba(229, 37, 33);
-    border-width: 10px;
-    float: left;
-}

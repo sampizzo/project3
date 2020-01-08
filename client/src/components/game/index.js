@@ -40,8 +40,7 @@ const life = new UIfx(lifeAudio, {
 const gameOver = new UIfx(gameOverAudio, {
   volume: 0.8, // number between 0.0 ~ 1.0
   throttleMs: 50
-})
-
+});
 
 // theme.play();
 
@@ -94,6 +93,7 @@ function Game(props) {
   console.log("timer" + timer);
   console.log("counter", counter);
 
+  //API CALL TO SAVE SCORES
   ///////////////////////////////////////////////////////////////////
 
   function saveScore() {
@@ -142,7 +142,6 @@ function Game(props) {
           setShow(true);
           console.log(show);
           gameOver.play();
-
         }
       }
     }

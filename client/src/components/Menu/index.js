@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import axios from "axios";
+import Super from "./super.png";
+import Typing from "./typing.png";
+import Tutor from "./tutor.png";
+
 
 class Menu extends React.Component {
   state = {
@@ -41,6 +45,11 @@ class Menu extends React.Component {
     console.log("state", this.state);
     return (
       <div className="container">
+          <br/>
+          <img className="super" src={Super}></img> <br/>
+          <img className="img"src={Typing}></img> <br/>
+          <img className="img"src={Tutor}></img>
+
         <div className="userCard">
           <h1>User Info Goes Here</h1>
         </div>

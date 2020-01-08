@@ -1,5 +1,5 @@
 .scoreCard { 
-    background-color: white;
+    background-color: lightgray;
     border-radius: 1rem;
     text-align: center;
     /* width: 40%; */
@@ -12,9 +12,11 @@
     border-width: 10px;
     color: black;
     float: left;
+    opacity: .85;
+
 }
 .button {
-    color: white;
+    color: lightgray;
     background-color: rgba(229, 37, 33);;
     border-radius: 1rem;
     margin: 2%;
@@ -22,7 +24,7 @@
 }
 
 .userCard { 
-    background-color: white;
+    background-color: lightgray;
     border-radius: 1rem;
     text-align: center;
     /* width: 50%; */
@@ -34,6 +36,8 @@
     border-color: rgba(4, 156, 216);
     border-width: 10px;
     float: left;
+    opacity: .85;
+
 }
 
 .gameCard { 
@@ -46,7 +50,14 @@
     padding-top: 3%;
     padding-bottom: 3%;
     border-style: solid;
-    border-color: rgba(229, 37, 33);
+    border-color: RGB(67, 176, 71);
     border-width: 10px;
     float: left;
+    opacity: .85;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  
 }

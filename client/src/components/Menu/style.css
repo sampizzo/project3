@@ -1,0 +1,52 @@
+.scoreCard { 
+    background-color: white;
+    border-radius: 1rem;
+    text-align: center;
+    /* width: 40%; */
+    margin: auto;
+    margin-top: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-style: solid;
+    border-color: RGB(251, 208, 0);
+    border-width: 10px;
+    color: black;
+    float: left;
+}
+.button {
+    color: white;
+    background-color: rgba(229, 37, 33);;
+    border-radius: 1rem;
+    margin: 2%;
+    padding: 2%;
+}
+
+.userCard { 
+    background-color: white;
+    border-radius: 1rem;
+    text-align: center;
+    /* width: 50%; */
+    margin: auto;
+    margin-top: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-style: solid;
+    border-color: rgba(4, 156, 216);
+    border-width: 10px;
+    float: left;
+}
+
+.gameCard { 
+    background-color: white;
+    border-radius: 1rem;
+    text-align: center;
+    /* width: 50%; */
+    margin: auto;
+    margin-top: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-style: solid;
+    border-color: rgba(229, 37, 33);
+    border-width: 10px;
+    float: left;
+}

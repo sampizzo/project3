@@ -7,43 +7,47 @@ import { PromiseProvider } from "mongoose";
 import ScoreBoard from "../scoreboard";
 import Navbar from "../Navbar/index.js";
 import { Redirect } from "react-router-dom";
-
-                        //Gifs and images
+import API from "../../utils/API";
+//Gifs and images
 ///////////////////////////////////////////////////////////////////
 // import flagpole from "./flagpole.gif";
 // import coinGif from "./coin.gif";
 // import dieGif from "./dies.gif";
 // import extraLife from "./1up.png";
 
-                          //UIFX Audio imports
+//UIFX Audio imports
 ///////////////////////////////////////////////////////////////////
 
 import UIfx from "uifx";
 import coinAudio from "./coin.mp3";
-import themeAudio from "./Birabuto-Kingdom.mp3";
+// import themeAudio from "./Birabuto-Kingdom.mp3";
 import lvlAudio from "./lvl.mp3";
 import lifeAudio from "./lostLife.wav";
+import gameOverAudio from "./gameOver.wav";
 
 const coin = new UIfx(coinAudio, {
   volume: 0.6, // number between 0.0 ~ 1.0
   throttleMs: 50
 });
-const theme = new UIfx(themeAudio, {
-  volume: 0.1, // number between 0.0 ~ 1.0
-  throttleMs: 100
-});
+// const theme = new UIfx(themeAudio, {
+//   volume: 0.1, // number between 0.0 ~ 1.0
+//   throttleMs: 100
+// });
 const life = new UIfx(lifeAudio, {
   volume: 1.0, // number between 0.0 ~ 1.0
   throttleMs: 40
 });
-const lvl = new UIfx(lvlAudio);
-theme.play();
+const gameOver = new UIfx(gameOverAudio, {
+  volume: 0.8, // number between 0.0 ~ 1.0
+  throttleMs: 50
+})
 
 
+// theme.play();
 
 ///////////////////////////////////////////////////////////////////
 
-                      //GAME FUNCTION BEGIN
+//GAME FUNCTION BEGIN
 
 ///////////////////////////////////////////////////////////////////
 
@@ -64,15 +68,13 @@ function Game(props) {
   const [coinsCollected, setCoinsCollected] = useState(0);
   const [wordCount, setWordCount] = useState(0);
   const [errCount, setErrCount] = useState(0);
+  let timer;
 
-
-
-
-            //TIMER FUNCTION, IF COUNTER = 0, -1 LIVES
-///////////////////////////////////////////////////////////////////
+  //TIMER FUNCTION, IF COUNTER = 0, -1 LIVES
+  ///////////////////////////////////////////////////////////////////
 
   useEffect(() => {
-    let timer = setInterval(() => {
+    timer = setInterval(() => {
       setCounter(counter => counter - 1);
     }, 1000);
   }, []);
@@ -82,50 +84,72 @@ function Game(props) {
     life.play();
     setCounter(10);
     if (lives === 1) {
-      console.log("lives = 0")
+      saveScore();
       setShow(true);
-      console.log(show)
+      // theme.setVolume(0);
+      life.setVolume(0);
+      gameOver.play();
     }
   }
+  console.log("timer" + timer);
+  console.log("counter", counter);
 
+  ///////////////////////////////////////////////////////////////////
 
-                        //KEY PRESS HOOK
-///////////////////////////////////////////////////////////////////
-useKeyPress(key => {
+  function saveScore() {
+    console.log("Save score function");
+    API.getUser().then(res => {
+      console.log(res);
+      API.saveScores({
+        language: "HTML",
+        level: lvl,
+        highscore: score,
+        user: res.data._id
+      });
+    });
+  }
+
+  //KEY PRESS HOOK
+  ///////////////////////////////////////////////////////////////////
+  useKeyPress(key => {
     if (key === word[index].char) {
       word[index].guessed = true;
       let newIndex = index + 1;
       setScore(score + 10);
       if (newIndex === word.length) {
-        setCoinsCollected(coinsCollected + 1)
-        setWordCount(wordCount + 1)
+        setCoinsCollected(coinsCollected + 1);
+        setWordCount(wordCount + 1);
         coin.play();
         setCounter(10);
         if (score % 100 === 0) {
           setLvl(lvl + 1);
         }
         setWordIndex(wordIndex + 1);
-      } 
+      }
       setIndex(newIndex);
     }
     if (key !== word[index].char) {
       setMistakes(mistakes + 1);
-      setErrCount(errCount + 1)
+      setErrCount(errCount + 1);
       if (mistakes === 3) {
         setLives(lives - 1);
         setMistakes(0);
         life.play();
         if (lives === 1) {
-          console.log("lives = 0")
+          // theme.setVolume(0);
+          life.setVolume(0);
+          saveScore();
           setShow(true);
-          console.log(show)
+          console.log(show);
+          gameOver.play();
+
         }
       }
     }
   });
 
-                    //CHANGE CSS OF LETTER TYPED
-///////////////////////////////////////////////////////////////////
+  //CHANGE CSS OF LETTER TYPED
+  ///////////////////////////////////////////////////////////////////
   useEffect(() => {
     let newWord = htmlJson[wordIndex].syntax.split("").map(letter => {
       return { char: letter, guessed: false };
@@ -134,15 +158,20 @@ useKeyPress(key => {
     setIndex(0);
   }, [wordIndex]);
 
-
-
-
-                          //RETURN OF THE JEDI
-///////////////////////////////////////////////////////////////////
+  //RETURN OF THE JEDI
+  ///////////////////////////////////////////////////////////////////
   return (
     <div className="container">
-      {show === true && <ScoreBoard lvl={lvl} score={score} coinsCollected={coinsCollected} wordCount={wordCount} errCount={errCount} />}
-      <div id="Game" style={ show ? { display: "none" }  : { display: "block" } }>
+      {show === true && (
+        <ScoreBoard
+          lvl={lvl}
+          score={score}
+          coinsCollected={coinsCollected}
+          wordCount={wordCount}
+          errCount={errCount}
+        />
+      )}
+      <div id="Game" style={show ? { display: "none" } : { display: "block" }}>
         <div className="gameDiv">
           {/* <div id="lvl" className="gif">
             <img src={flagpole}></img>
@@ -166,8 +195,8 @@ useKeyPress(key => {
         <div>
           <div className="scoreBoard">
             <h2>
-              Score: {score} Coins: {coinsCollected} Level: {lvl} Lives: {lives} Mistakes: {mistakes}{" "} 
-              Time: {counter}
+              Score: {score} Coins: {coinsCollected} Level: {lvl} Lives: {lives}{" "}
+              Mistakes: {mistakes} Time: {counter}
             </h2>
           </div>
         </div>

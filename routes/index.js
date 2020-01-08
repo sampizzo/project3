@@ -15,6 +15,7 @@ router.get('/getuser', (req, res) => {
 router.post('/logout', (req, res) => {
 	if (req.user) {
 		req.session.destroy()
+		// res.redirect("/");
 		res.clearCookie('connect.sid') // clean up!
 		return res.json({ msg: 'logging you out' })
 	} else {

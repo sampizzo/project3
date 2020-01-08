@@ -1,5 +1,5 @@
 .scoreCard { 
-    background-color: lightgray;
+    background-color: white;
     border-radius: 1rem;
     text-align: center;
     /* width: 40%; */
@@ -11,12 +11,13 @@
     border-color: RGB(251, 208, 0);
     border-width: 10px;
     color: black;
-    float: left;
     opacity: .85;
+    display: block;
+    float: left;
 
 }
 .button {
-    color: lightgray;
+    color: white;
     background-color: rgba(229, 37, 33);;
     border-radius: 1rem;
     margin: 2%;
@@ -24,7 +25,7 @@
 }
 
 .userCard { 
-    background-color: lightgray;
+    background-color: white;
     border-radius: 1rem;
     text-align: center;
     /* width: 50%; */
@@ -37,6 +38,7 @@
     border-width: 10px;
     float: left;
     opacity: .85;
+    height: 80%;
 
 }
 

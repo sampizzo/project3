@@ -47,7 +47,7 @@ class App extends Component {
               <Route exact path="/special" component={SpecialPage} />
             </Switch>
           </div>
-          <Footer></Footer>
+          {/* <Footer></Footer> */}
         </Router>
       );
     } else {
@@ -60,7 +60,7 @@ class App extends Component {
               <Route exact path="/login" component={LoginPage} />
             </Switch>
           </div>
-          <Footer></Footer>
+          {/* <Footer></Footer> */}
         </Router>
       );
     }

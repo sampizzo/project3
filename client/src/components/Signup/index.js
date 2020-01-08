@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import "./style.css";
 
 class Signup extends React.Component {
 state = {username: "", password: ""}
@@ -25,7 +26,7 @@ handleSubmit = () =>{
   render() {
     console.log("state", this.state)
     return (
-      <div>
+      <div className="rcorners">
         <h1>Sign Up</h1>
         <p>Username</p>
         <input onChange= {this.handleUsername}></input>

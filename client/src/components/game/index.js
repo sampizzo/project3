@@ -172,15 +172,7 @@ function Game(props) {
       )}
       <div id="Game" style={show ? { display: "none" } : { display: "block" }}>
         <div className="gameDiv">
-          {/* <div id="lvl" className="gif">
-            <img src={flagpole}></img>
-          </div>
-          <div id="coin" className="gif">
-            <img src={coinGif}></img>
-          </div>
-          <div id="die" className="gif">
-            <img src={dieGif}></img>
-          </div> */}
+        
           <div key={+new Date(wordIndex)} className="word">
             <syntaxComponent>
               {word.map(letter => (
@@ -190,6 +182,8 @@ function Game(props) {
               ))}
             </syntaxComponent>
           </div>
+        <div id="lvl" className="gif">
+          <img src={flagpole}></img>
         </div>
         <div>
           <div className="scoreBoard">
@@ -200,6 +194,7 @@ function Game(props) {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

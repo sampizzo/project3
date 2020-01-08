@@ -1,16 +1,10 @@
-<<<<<<< HEAD
 // @ts-nocheck
 import React, { Component } from "react";
 import Axios from "axios";
-=======
-import React, { Component } from 'react';
-import Axios from 'axios';
->>>>>>> a1f649f2574561782780a568da6b25686767e727
 import { Redirect } from "react-router-dom";
 import "./style.css";
 
 class Login extends Component {
-<<<<<<< HEAD
   constructor() {
     super();
     this.state = {
@@ -18,14 +12,6 @@ class Login extends Component {
       password: "",
       redirectTo: null
     };
-=======
-  constructor(props){
-  super(props)
-  this.state = { 
-    username: "", 
-    password: "", 
-    redirectTo: null 
->>>>>>> a1f649f2574561782780a568da6b25686767e727
   }
   handleUsername = event => {
     // console.log("typing username", event.target.value)

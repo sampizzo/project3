@@ -9,6 +9,7 @@ import BonusPage from "./pages/bonus";
 import UserPage from "./pages/user";
 import Axios from "axios";
 import MenuPage from "./pages/menu";
+import HomePage from "./pages/home";
 import JavascriptPage from "./pages/javascript";
 import SpecialPage from "./pages/special";
 
@@ -37,6 +38,7 @@ class App extends Component {
           <Navbar></Navbar>
           <div>
             <Switch>
+              <Route exact path="/" component={HomePage} /> 
               <Route exact path="/signup" component={SignUpPage} />
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/user" component={UserPage} />
@@ -56,6 +58,7 @@ class App extends Component {
           <Navbar></Navbar>
           <div>
             <Switch>
+              <Route exact path="/" component={HomePage} /> 
               <Route exact path="/signup" component={SignUpPage} />
               <Route exact path="/login" component={LoginPage} />
             </Switch>

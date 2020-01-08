@@ -12,6 +12,19 @@ router.get('/getuser', (req, res) => {
 	res.json(req.user);
 });
 
+// Router to log out 
+router.post('/logout', (req, res) => {
+	if (req.user) {
+		req.session.destroy()
+		res.clearCookie('connect.sid') // clean up!
+		return res.json({ msg: 'logging you out' })
+	} else {
+		return res.json({ msg: 'no user to log out!' })
+	}
+})
+
+
+
 // Route to signup, this route save the username and password to the db
 router.post('/signup', (req, res) => {
 	console.log("req.body from signup route is:")

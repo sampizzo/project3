@@ -116,8 +116,7 @@ function Game(props) {
 
   return (
     <div className="container">
-      {/* <Navbar /> */}
-      <div></div>
+
       <div className="gameDiv">
         <div id="lvl" className="gif">
           <img src={flagpole}></img>

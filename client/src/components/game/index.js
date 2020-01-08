@@ -105,10 +105,23 @@ function Game(props) {
         language: "HTML",
         level: lvl,
         highscore: score,
-        user: res.data._id
+        user: res.data._id,
+        coins: coinsCollected
       });
     });
   }
+
+  function saveCoin() {
+    console.log("Save coin function");
+    API.getUser().then(res => {
+      console.log(res);
+      API.saveCoins({
+        coins: coinsCollected
+      });
+    });
+  }
+
+
 
   //KEY PRESS HOOK
   ///////////////////////////////////////////////////////////////////
@@ -181,9 +194,6 @@ function Game(props) {
                 </span>
               ))}
             </syntaxComponent>
-          </div>
-          <div id="lvl" className="gif">
-            <img src={flagpole}></img>
           </div>
           <div>
             <div className="scoreBoard">

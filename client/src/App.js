@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import GamePage from "./pages/game";
 import SignUpPage from "./pages/signup";
@@ -40,7 +40,7 @@ class App extends Component {
               <Route exact path="/signup" component={SignUpPage} />
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/user" component={UserPage} />
-              <Route exact path="/game" component={GamePage} />
+              <Route exact path="/HTML" component={GamePage} />
               <Route exact path="/bonus" component={BonusPage} />
               <Route exact path="/menu" component={MenuPage} />
               <Route exact path="/javascript" component={JavascriptPage} />

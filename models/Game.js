@@ -17,6 +17,14 @@ var GameSchema = new Schema({
     type: Number,
     trim: true,
     default: 1
+  },
+  highscore: {
+    type: Number,
+    trim: true
+  },
+  user: {
+    type: Schema.Types.ObjectId, 
+    ref: "User"
   }
 });
 

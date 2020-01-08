@@ -9,7 +9,9 @@ router.use("/api", apiRoutes);
 
 router.get('/getuser', (req, res) => {
 	console.log("getuser was hit");
-	res.json(req.user);
+	User.findOne({ _id: req.user._id })
+	.then(dbModel => res.json(dbModel))
+	.catch(err => res.json(err));
 });
 
 // Router to log out 

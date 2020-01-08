@@ -50,6 +50,11 @@ var UserSchema = new Schema({
       // type: String
       type: Schema.Types.ObjectId,
       ref: "Game"
+    },
+    coins: 
+    {
+      type: Number,
+      default: 0
     }
 
   
@@ -80,6 +85,8 @@ UserSchema.pre('save', function(next) {
 
 // This creates our model from the above schema, using mongoose's model method
 var User = mongoose.model("User", UserSchema);
+
+
 
 // Export the User model
 module.exports = User;

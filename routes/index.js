@@ -1,11 +1,8 @@
 const path = require("path");
 const router = require("express").Router();
-const apiRoutes = require("./api");
 const User = require("../models/User");
 const passport = require("../passport/index")
 
-// API Routes
-router.use("/api", apiRoutes);
 
 router.get('/getuser', (req, res) => {
 	console.log("getuser was hit");
@@ -18,6 +15,7 @@ router.get('/getuser', (req, res) => {
 router.post('/logout', (req, res) => {
 	if (req.user) {
 		req.session.destroy()
+		// res.redirect("/");
 		res.clearCookie('connect.sid') // clean up!
 		return res.json({ msg: 'logging you out' })
 	} else {

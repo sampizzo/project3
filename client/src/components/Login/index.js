@@ -5,11 +5,11 @@ import "./style.css";
 class Login extends React.Component {
 state = {username: "", password: ""}
 handleUsername = (event) =>{
-  // console.log("typing username", event.target.value)
+  // console.log("syntax username", event.target.value)
   this.setState({username: event.target.value})
 }
 handlePassword = (event) =>{
-  // console.log("typing username", event.target.value)
+  // console.log("syntax username", event.target.value)
   this.setState({password: event.target.value})
 }
 handleSubmit = () =>{

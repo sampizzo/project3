@@ -8,6 +8,7 @@ import ScoreBoard from "../scoreboard";
 import Navbar from "../Navbar/index.js";
 import { Redirect } from "react-router-dom";
 import API from "../../utils/API";
+
 //Gifs and images
 ///////////////////////////////////////////////////////////////////
 // import flagpole from "./flagpole.gif";
@@ -172,7 +173,6 @@ function Game(props) {
       )}
       <div id="Game" style={show ? { display: "none" } : { display: "block" }}>
         <div className="gameDiv">
-        
           <div key={+new Date(wordIndex)} className="word">
             <syntaxComponent>
               {word.map(letter => (
@@ -182,19 +182,19 @@ function Game(props) {
               ))}
             </syntaxComponent>
           </div>
-        <div id="lvl" className="gif">
-          <img src={flagpole}></img>
-        </div>
-        <div>
-          <div className="scoreBoard">
-            <h2>
-              Score: {score} Coins: {coinsCollected} Level: {lvl} Lives: {lives}{" "}
-              Mistakes: {mistakes} Time: {counter}
-            </h2>
+          <div id="lvl" className="gif">
+            <img src={flagpole}></img>
+          </div>
+          <div>
+            <div className="scoreBoard">
+              <h2>
+                Score: {score} Coins: {coinsCollected} Level: {lvl} Lives:{" "}
+                {lives} Mistakes: {mistakes} Time: {counter}
+              </h2>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }

@@ -8,10 +8,14 @@ export default {
   getScores: function() {
     return axios.get("/api/scores");
   },
+
+  saveCoins: function(id) {
+    return axios.put("/getuser/" + id)
+  },
   // Gets the book with the given id
-//   getBook: function(id) {
-//     return axios.get("/api/books/" + id);
-//   },
+  // getBook: function(id) {
+  //   return axios.get("/api/books/" + id);
+  // },
   // Saves a book to the database
   saveScores: function(scoreData) {
       console.log("Save scores")

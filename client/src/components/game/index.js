@@ -5,7 +5,6 @@ import htmlJson from "../../utils/html.json";
 import useKeyPress from "../../hooks/useKeyPress";
 import { PromiseProvider } from "mongoose";
 import ScoreBoard from "../scoreboard";
-import Navbar from "../Navbar/index.js";
 import { Redirect } from "react-router-dom";
 import API from "../../utils/API";
 
@@ -72,7 +71,6 @@ function Game(props) {
 
   //TIMER FUNCTION, IF COUNTER = 0, -1 LIVES
   ///////////////////////////////////////////////////////////////////
-
   useEffect(() => {
     timer = setInterval(() => {
       setCounter(counter => counter - 1);

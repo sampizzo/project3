@@ -1,12 +1,11 @@
-// @ts-nocheck
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { Redirect } from "react-router-dom";
 import "./style.css";
 
 class Login extends Component {
-  constructor(){
-  super()
+  constructor(props){
+  super(props)
   this.state = { 
     username: "", 
     password: "", 
@@ -46,8 +45,6 @@ class Login extends Component {
     if (this.state.redirectTo) {
       return <Redirect to={{ pathname: this.state.redirectTo }} />
     } else {
-
-
       return (
         <div className="rcorners">
           <h1>Login</h1>

@@ -116,7 +116,7 @@ function Game(props) {
 
   return (
     <div className="container">
-      <Navbar />
+      {/* <Navbar /> */}
       <div></div>
       <div className="gameDiv">
         <div id="lvl" className="gif">

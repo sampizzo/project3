@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import "./style.css";
 
 class Login extends React.Component {
 state = {username: "", password: ""}
@@ -19,13 +20,14 @@ handleSubmit = () =>{
   })
   .then(function(data){
     console.log("from the back end", data)
+    //set the state to redirect to new page
   }) 
 }
 
   render() {
     console.log("state", this.state)
     return (
-      <div>
+      <div className="rcorners">
         <h1>Login</h1>
         <p>Username</p>
         <input onChange= {this.handleUsername}></input>

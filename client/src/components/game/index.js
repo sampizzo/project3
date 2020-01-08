@@ -116,6 +116,7 @@ function Game(props) {
 
   return (
     <div className="container">
+
       <div className="gameDiv">
         <div id="lvl" className="gif">
           <img src={flagpole}></img>

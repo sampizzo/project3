@@ -76,8 +76,8 @@ class Menu extends React.Component {
         <img className="Mario" src={Mario}></img>
           <h1>Welcome Back,</h1>
           <h2>{this.state.userName}!</h2><br/>
-          <img className="Coin" src={Coin}></img>
-          <h3>x{this.state.coin}'s</h3>
+          {/* <img className="Coin" src={Coin}></img>
+          <h3>x{this.state.coin}'s</h3> */}
 
         </div>
        

@@ -1,57 +1,41 @@
-#Project Title
+# Syntax Tutor 
 
-One Paragraph of project description goes here
+Syntax Tutor is an app that allows you to train your typing skills on basic computer language syntax. 
 
-Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## Getting Started
+Create an account, or use our demo account!
+Username: demo123
+Password: demo123
 
-Prerequisites
-What things you need to install the software and how to install them
 
-Give examples
-Installing
-A step by step series of examples that tell you how to get a development env running
+After login you can select a language from the dashboard and click the "lets'play" button.
 
-Say what the step will be
+Type the sintax falling from top to bottom. 
+If the lives get to 0 the game is over, the user have the option of replay that game or select new game from the menu page.
 
-Give the example
-And repeat
+## Starting the app locally
+Start by installing front and backend dependencies. While in this directory, run the following command:
 
-until finished
-End with an example of getting some data out of the system or using it for a little demo
+npm install
+This should install node modules within the server and the client folder.
 
-Running the tests
-Explain how to run the automated tests for this system
+After both installations complete, run the following command in your terminal:
 
-Break down into end to end tests
-Explain what these tests test and why
+npm start
+Your app should now be running on http://localhost:3000. The Express server should intercept any AJAX requests from the client.
 
-Give an example
-And coding style tests
-Explain what these tests test and why
+## About
+This app uses React to handle the view and functionality, Express and Node for server-side API routing, and MongoDB with Mongoose for data storage. Passport.js authenticates user login credentials. This application follows the MVC design pattern.
 
-Give an example
-Deployment
-Add additional notes about how to deploy this on a live system
+Technologies used: MongoDB, Mongoose, Express, React, Node, Passport.js, JavaScript, Bootstrap, CSS3, and HTML5.
 
-Built With
-Dropwizard - The web framework used
-Maven - Dependency Management
-ROME - Used to generate RSS Feeds
-Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+## Links
+Deployed: https://arcane-springs-56036.herokuapp.com/
+Repository: https://github.com/sampizzo/project3
 
-Versioning
-We use SemVer for versioning. For the versions available, see the tags on this repository.
+## Authors
 
-Authors
-Billie Thompson - Initial work - PurpleBooth
-See also the list of contributors who participated in this project.
+Dave Nolan: https://github.com/noho-glitch
+Sabrina Shaget: https://github.com/samuniz
+Sam Pizzo: https://github.com/sampizzo
 
-License
-This project is licensed under the MIT License - see the LICENSE.md file for details
-
-Acknowledgments
-Hat tip to anyone whose code was used
-Inspiration
-etc

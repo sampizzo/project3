@@ -1,29 +1,57 @@
-# Create React Express App
+#Project Title
 
-## About This Boilerplate
+One Paragraph of project description goes here
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+Prerequisites
+What things you need to install the software and how to install them
 
-## Starting the app locally
+Give examples
+Installing
+A step by step series of examples that tell you how to get a development env running
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+Say what the step will be
 
-```
-npm install
-```
+Give the example
+And repeat
 
-This should install node modules within the server and the client folder.
+until finished
+End with an example of getting some data out of the system or using it for a little demo
 
-After both installations complete, run the following command in your terminal:
+Running the tests
+Explain how to run the automated tests for this system
 
-```
-npm start
-```
+Break down into end to end tests
+Explain what these tests test and why
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+Give an example
+And coding style tests
+Explain what these tests test and why
 
-## Deployment (Heroku)
+Give an example
+Deployment
+Add additional notes about how to deploy this on a live system
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+Built With
+Dropwizard - The web framework used
+Maven - Dependency Management
+ROME - Used to generate RSS Feeds
+Contributing
+Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+
+Versioning
+We use SemVer for versioning. For the versions available, see the tags on this repository.
+
+Authors
+Billie Thompson - Initial work - PurpleBooth
+See also the list of contributors who participated in this project.
+
+License
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+Acknowledgments
+Hat tip to anyone whose code was used
+Inspiration
+etc

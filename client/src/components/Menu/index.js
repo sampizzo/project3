@@ -22,7 +22,7 @@ class Menu extends React.Component {
   };
   componentDidMount = () => {
   axios.get("/getuser").then(result => {
-      console.log(result)
+      // console.log(result)
       this.setState({userName: result.data.username})
       this.setState({coins: result.data.coins})
 
@@ -31,18 +31,16 @@ class Menu extends React.Component {
   }
   handleClick = event => {
     this.setState({ language: event.target.innerText });
-    console.log(this.state.language);
+    // console.log(this.state.language);
     axios.get("/api/scores").then(results => {
-      let top10 = results.data.slice(0, 10);
+      let top10 = results.data;
       console.log(top10);
 
-      //    for (var i = 0; i < 10; i++) {
-      //     console.log(results.data)
-      //scores
+
       this.setState({ highscore: top10[0].highscore });
       this.setState({ highscore2: top10[1].highscore });
       this.setState({ highscore3: top10[2].highscore });
-
+      
       //users
       this.setState({ user: top10[0].user.username });
       this.setState({ user2: top10[1].user.username });
@@ -54,24 +52,16 @@ class Menu extends React.Component {
   //   })}
 
   render() {
-    console.log("state", this.state);
+    // console.log("state", this.state);
     return (
       <div className="container">
+        
           <br/>
           <img className="super" src={Super}></img> <br/>
           <img className="img"src={Syntax}></img> <br/>
           <img className="img"src={Tutor}></img>
-
-        <div className="userCard">
-        <img className="Mario" src={Mario}></img>
-          <h1>Welcome Back,</h1>
-          <h2>{this.state.userName}!</h2><br/>
-          <img className="Coin" src={Coin}></img>
-          <h3>x{this.state.coin}'s</h3>
-
-        </div>
-        <div className="gameCard">
-          <h1>Game Pages Go Here</h1>
+          <div className="gameCard">
+          <h1>Please Select Your Game</h1>
           <button className="button" onClick={this.handleClick}>
             HTML
           </button>
@@ -82,6 +72,15 @@ class Menu extends React.Component {
             special
           </button>
         </div>
+        <div className="userCard">
+        <img className="Mario" src={Mario}></img>
+          <h1>Welcome Back,</h1>
+          <h2>{this.state.userName}!</h2><br/>
+          <img className="Coin" src={Coin}></img>
+          <h3>x{this.state.coin}'s</h3>
+
+        </div>
+       
 
         <div className="scoreCard">
           <h1 id="hiScore">HIGH SCORE!</h1>

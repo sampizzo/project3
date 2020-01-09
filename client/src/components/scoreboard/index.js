@@ -16,7 +16,7 @@ class ScoreBoard extends React.Component {
     return (
       <div>
         <div className="gameOver">
-          <h1>Game Over</h1>
+          <h1 id="gameover">Game Over</h1>
           <hr />
           <h2>Level: {this.props.lvl}</h2>
           <h2>Highscore: {this.props.score}</h2>

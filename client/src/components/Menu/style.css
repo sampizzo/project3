@@ -1,35 +1,41 @@
 .scoreCard { 
-    background-color: lightgray;
+    background-color: white;
     border-radius: 1rem;
     text-align: center;
     /* width: 40%; */
-    margin: auto;
-    margin-top: 10%;
+    display: block;
+    /* margin: auto; */
+    /* margin-top: 10%; */
     padding-top: 3%;
     padding-bottom: 3%;
     border-style: solid;
     border-color: RGB(251, 208, 0);
     border-width: 10px;
     color: black;
-    float: left;
     opacity: .85;
+    display: block;
+    float: left;
+    margin:2%;
+    width: 45%;
+
 
 }
 .button {
-    color: lightgray;
+    color: white;
     background-color: rgba(229, 37, 33);;
     border-radius: 1rem;
-    margin: 2%;
-    padding: 2%;
+    margin: 25px;
+    padding: 25px 50px 25px 50px;
 }
 
 .userCard { 
-    background-color: lightgray;
+    background-color: white;
     border-radius: 1rem;
     text-align: center;
+    display: block;
     /* width: 50%; */
-    margin: auto;
-    margin-top: 10%;
+    /* margin: auto; */
+    /* margin-top: 10%; */
     padding-top: 3%;
     padding-bottom: 3%;
     border-style: solid;
@@ -37,6 +43,10 @@
     border-width: 10px;
     float: left;
     opacity: .85;
+    height: 80%;
+    margin: 2%;
+    width: 45%;
+
 
 }
 
@@ -52,7 +62,7 @@
     border-style: solid;
     border-color: RGB(67, 176, 71);
     border-width: 10px;
-    float: left;
+    /* float: left; */
     opacity: .85;
 }
 
@@ -73,3 +83,11 @@ img {
     height: 50px;
     float: left;
 }
+
+body {
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* #hiScore {
+
+} */

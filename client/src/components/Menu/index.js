@@ -55,20 +55,12 @@ class Menu extends React.Component {
     // console.log("state", this.state);
     return (
       <div className="container">
+        
           <br/>
           <img className="super" src={Super}></img> <br/>
           <img className="img"src={Syntax}></img> <br/>
           <img className="img"src={Tutor}></img>
-
-        <div className="userCard">
-        <img className="Mario" src={Mario}></img>
-          <h1>Welcome Back,</h1>
-          <h2>{this.state.userName}!</h2><br/>
-          <img className="Coin" src={Coin}></img>
-          <h3>x{this.state.coin}'s</h3>
-
-        </div>
-        <div className="gameCard">
+          <div className="gameCard">
           <h1>Please Select Your Game</h1>
           <button className="button" onClick={this.handleClick}>
             HTML
@@ -80,6 +72,15 @@ class Menu extends React.Component {
             special
           </button>
         </div>
+        <div className="userCard">
+        <img className="Mario" src={Mario}></img>
+          <h1>Welcome Back,</h1>
+          <h2>{this.state.userName}!</h2><br/>
+          <img className="Coin" src={Coin}></img>
+          <h3>x{this.state.coin}'s</h3>
+
+        </div>
+       
 
         <div className="scoreCard">
           <h1 id="hiScore">HIGH SCORE!</h1>

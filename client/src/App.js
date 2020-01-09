@@ -61,10 +61,6 @@ class App extends Component {
               <Route exact path="/login" component={LoginPage} />
             </Switch>
           </div>
-<<<<<<< HEAD
-          {/* <Footer></Footer> */}
-=======
->>>>>>> 9b661fe62505d3a90588a3ce3bf976389cabce71
         </Router>
       );
     }

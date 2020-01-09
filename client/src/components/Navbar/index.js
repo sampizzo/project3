@@ -38,7 +38,7 @@ class Navbar extends React.Component {
         <Link className="navbar-brand" to="/menu">
           Super Syntax Tutor
       </Link>
-        <div style={{ position: 'absolute', right: 20 }}>
+        <div style={{position: 'absolute', right: 20}}>
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link

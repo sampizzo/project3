@@ -7,7 +7,7 @@ function Home() {
     <div className="wrapper">
       <div className="center">
         <div id="login" className="rcorners">
-          <h4>Welcome to Typing Tutor</h4>
+          <h4>Welcome to Super Syntax Tutor!</h4>
 
           <Link to="/login">
             <button type="button">Login</button>

@@ -1,9 +1,18 @@
-import React from "react";
+import React, { Component } from "react";
 import Axios from "axios";
+import { Redirect } from "react-router-dom";
 import "./style.css";
 
-class Signup extends React.Component {
-  state = { username: "", password: "" };
+class Signup extends Component {
+  constructor() {
+    super();
+    this.state = {
+      username: "",
+      password: "",
+      redirectTo: null
+    };
+  }
+
   handleUsername = event => {
     // console.log("typing username", event.target.value)
     this.setState({ username: event.target.value });
@@ -17,13 +26,24 @@ class Signup extends React.Component {
     Axios.post("/signup", {
       username: this.state.username,
       password: this.state.password
-    }).then(function(data) {
-      console.log("from the back end", data);
+    }).then(response => {
+      console.log("from the back end", response);
+
+      if (response.status === 200) {
+        console.log("good to go!");
+      }
+      this.setState({
+        redirectTo: "/login"
+      });
     });
   };
+  
 
   render() {
     console.log("state", this.state);
+    if (this.state.redirectTo) {
+      return <Redirect to={{ pathname: this.state.redirectTo }} />;
+    } else {
     return (
       <div className="wrapper">
         <div className="center">
@@ -39,6 +59,7 @@ class Signup extends React.Component {
       </div>
     );
   }
+}
 }
 
 export default Signup;

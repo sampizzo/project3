@@ -46,12 +46,13 @@ class Navbar extends React.Component {
                 to="/login"
                 className={window.location.pathname === "/signin" ? "nav-link active" : "nav-link"}
               >
-                <i className="fa fa-user"></i>
+                <i className="fa fa-user" style={{ color: "#009cda" }}></i>
 
               </Link>
             </li>
+            <li>&nbsp;</li>
             <li>
-              <Link to="/" onClick={this.handlelogout}> Log Out</Link>
+              <Link className="logoutLink" to="/" onClick={this.handlelogout} > Log Out</Link>
               {/* <button onClick={this.handlelogout}>Log Out</button> */}
             </li>
           </ul>

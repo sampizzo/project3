@@ -36,7 +36,7 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <Link className="navbar-brand" to="/menu">
-          Syntax Tutor
+          Super Syntax Tutor
       </Link>
         <div>
           <ul className="navbar-nav">

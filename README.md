@@ -1,6 +1,6 @@
-# Syntax Tutor 
+# Super Syntax Tutor 
 
-Syntax Tutor is an app that allows you to train your typing skills on basic computer language syntax. 
+Super Syntax Tutor is an app that allows you to train your typing skills on basic computer language syntax. 
 
 ## Getting Started
 Create an account, or use our demo account!

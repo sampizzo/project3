@@ -1,5 +1,7 @@
 # Super Syntax Tutor 
 
+![Super Syntax Tutor](/client/public/images/header.png)
+
 Super Syntax Tutor is an app that allows you to train your typing skills on basic computer language syntax. 
 
 ## Getting Started
